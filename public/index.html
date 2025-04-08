@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="My Own Prtfolio">
+   <meta name="author" content="Yama">
+   <meta name="keywords" content="Yama, Portfolio, Web Developer">
+   <link rel="icon" href="imgs/favicon.png" type="image/x-icon">
+   <link rel="apple-touch-icon" href="imgs/favicon.png">
+   <link rel="preload" as="style" href="fontawesome/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+   <link rel="preload" as="style" href="bootstrap.min.css" onload="this.onload=null;this.rel='stylesheet'">
+   <link rel="preload" as="style" href="style.min.css" onload="this.onload=null;this.rel='stylesheet'">
+   <title>Yama</title>
+</head>
+
+<body>
+   <div class="header">
+      <div class="icon">
+         <img src="imgs/favicon.png" alt="Yama Logo">
+      </div>
+      <div class="bar">
+         <i class="fa-solid fa-bars"></i>
+      </div>
+      <ul class="nav">
+         <li class="home active" data-section='home_section'><span>Home</span></li>
+         <li class="about" data-section='about_section'><span>About</span></li>
+         <li class="gallary" data-section='gallary_section'><span>Gallary</span></li>
+         <li class="contact" data-section='contact_section'><span>Contact</span></li>
+      </ul>
+   </div>
+   <div class="home_section">
+      <div class="home-img">
+         <img src="imgs/favicon.png" alt="Home Image">
+      </div>
+      <div class="home-text">
+         <h1>Welcome to My Portfolio</h1>
+         <p>I'm Omar, a passionate web developer.</p>
+         <div class="down">
+            <a href="#about" class="btn">Learn More</a>
+            <div class='arrow'>
+               <a href="#about"><i class="fa-solid fa-arrow-down"></i></a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="about" class="about_section">
+      <div class="intro">
+         <div class="intro-text">
+            <h2>About Me</h2>
+            <p>I'm a web developer with a passion for creating beautiful and functional websites. I love coding and
+               learning new technologies.</p>
+         </div>
+         <div class="intro-img">
+            <img src="imgs/favicon-removebg.png" alt="About Image">
+         </div>
+      </div>
+      <div class="skills">
+         <div class="skills-intro">
+            <h2>My Skills</h2>
+            <p>I have experience in various web technologies and frameworks.</p>
+         </div>
+         <div class="my-skills">
+            <div class="skill">
+               <i class="fa-brands fa-html5" data-techno='HTML'></i>
+               <h4>HTML</h4>
+               <div class="details" data-skill='html'>
+               </div>
+            </div>
+            <div class="skill">
+               <i class="fa-brands fa-css3-alt" data-techno='CSS'></i>
+               <h4>CSS</h4>
+               <div class="details" data-skill='css'>
+               </div>
+            </div>
+            <div class="skill">
+               <i class="fa-brands fa-js" data-techno='JavaScript'></i>
+               <h4>JavaScript/JQuery</h4>
+               <div class="details" data-skill='javascript_jquery'>
+               </div>
+            </div>
+            <div class="skill">
+               <svg width="30px" height="40px" viewBox="-7.04 -7.04 46.08 46.08" xmlns="http://www.w3.org/2000/svg"
+                  fill="#007bff" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)" stroke="#007bff" stroke-width=".3">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0">
+                     <path transform="translate(-7.04, -7.04), scale(1.44)"
+                        d="M16,29.761279941481703C18.186463531307346,28.98678088365164,18.792186656761746,26.153527930324472,20.51215409256287,24.59719133944821C21.738687526008853,23.48734540709429,23.323151494410492,22.972603336964713,24.627144303966144,21.954887753144515C26.351676352851534,20.608957677390418,29.043671500227724,19.783473629212942,29.437165914427048,17.631567334216292C29.823128404081377,15.520850939906786,27.091200799773357,14.085138680153634,26.440054607773867,12.04060954676579C25.738920502907927,9.839123733866579,27.054305284295285,6.9857961642913615,25.501740044560925,5.2747526248771095C23.987752533631674,3.6062246409757117,21.240345525516247,3.623813184282932,18.997559938488497,3.8384212617926057C16.995432947388473,4.030001155553036,15.468513523274318,5.580527619727782,13.636310329907326,6.4101340338786645C12.14288340110753,7.086345364414098,10.61451886508403,7.516371332675332,9.168567997605525,8.28890731503929C7.384414354890855,9.242136721420419,5.476127646482718,9.993614041552238,4.119949949701866,11.494491310603884C2.4550305885476256,13.337051935138458,-0.21658937010024049,15.504397135207824,0.5003465552620607,17.881998660517812C1.276451958400389,20.455826146384858,5.563484758632995,19.951650042009565,7.291155997329776,22.011280983407836C8.781041456694705,23.787437304423,7.695141821597352,26.98266067194556,9.426987174724129,28.52382958921659C11.117050312510573,30.027816519388722,13.867473108403704,30.516673317446703,16,29.761279941481703"
+                        fill="#3178C6" strokewidth="0"></path>
+                  </g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                     <title>file_type_typescript</title>
+                     <path
+                        d="M23.827,8.243A4.424,4.424,0,0,1,26.05,9.524a5.853,5.853,0,0,1,.852,1.143c.011.045-1.534,1.083-2.471,1.662-.034.023-.169-.124-.322-.35a2.014,2.014,0,0,0-1.67-1c-1.077-.074-1.771.49-1.766,1.433a1.3,1.3,0,0,0,.153.666c.237.49.677.784,2.059,1.383,2.544,1.095,3.636,1.817,4.31,2.843a5.158,5.158,0,0,1,.416,4.333,4.764,4.764,0,0,1-3.932,2.815,10.9,10.9,0,0,1-2.708-.028,6.531,6.531,0,0,1-3.616-1.884,6.278,6.278,0,0,1-.926-1.371,2.655,2.655,0,0,1,.327-.208c.158-.09.756-.434,1.32-.761L19.1,19.6l.214.312a4.771,4.771,0,0,0,1.35,1.292,3.3,3.3,0,0,0,3.458-.175,1.545,1.545,0,0,0,.2-1.974c-.276-.395-.84-.727-2.443-1.422a8.8,8.8,0,0,1-3.349-2.055,4.687,4.687,0,0,1-.976-1.777,7.116,7.116,0,0,1-.062-2.268,4.332,4.332,0,0,1,3.644-3.374A9,9,0,0,1,23.827,8.243ZM15.484,9.726l.011,1.454h-4.63V24.328H7.6V11.183H2.97V9.755A13.986,13.986,0,0,1,3.01,8.289c.017-.023,2.832-.034,6.245-.028l6.211.017Z"
+                        style="fill:#f2f2f2"></path>
+                  </g>
+               </svg>
+               <h4>TypeScript</h4>
+               <div class="details" data-skill='typescript'>
+               </div>
+            </div>
+            <div class="skill">
+               <i class="fa-brands fa-node" data-techno='Node.js'></i>
+               <h4>Node Js/Express</h4>
+               <div class="details" data-skill='node_express'>
+               </div>
+            </div>
+            <div class="skill">
+               <i class="fa-brands fa-python" data-techno='Python'></i>
+               <h4>Python/Flask</h4>
+               <div class="details" data-skill='python_flask'>
+               </div>
+            </div>
+            <div class="skill">
+               <i class="fa-solid fa-database" data-techno='MySQL'></i>
+               <h4>MySQL</h4>
+               <div class="details" data-skill='mysql'>
+               </div>
+            </div>
+            <div class="skill">
+               <i class="fa-brands fa-bootstrap" data-techno='BootStrap'></i>
+               <h4>bootstrap</h4>
+               <div class="details" data-skill='bootstrap'>
+               </div>
+            </div>
+            <div class="skill">
+               <i class="fa-brands fa-git-alt" data-techno='Git'></i>
+               <h4>Github/Git</h4>
+               <div class="details" data-skill='github_git'>
+               </div>
+            </div>
+            <div class="skill">
+               <i class="fa-solid fa-server" data-techno='Server'></i>
+               <h4>Dealing With Server | APIS</h4>
+               <div class="details" data-skill='server_apis'>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="gallary_section">
+      <div class="intro">
+         <h2>My Projects</h2>
+         <p>Here are some of my projects that I have worked on.</p>
+      </div>
+      <div class="imgs">
+
+      </div>
+   </div>
+   <div class="contact_section">
+      <!-- <div class="connections"></div> -->
+      <div class="intro">
+         <h2>Contact Me</h2>
+         <p>If you have any questions or want to get in touch, feel free to contact me.</p>
+      </div>
+      <div class="content">
+         <div class="info">
+            <div class="icon">
+               <img src="imgs/favicon.png" alt="Yama Logo">
+            </div>
+            <div>name: omar</div>
+            <div>address: Egypt, Alex</div>
+            <div>Phone: 01202919251</div>
+         </div>
+
+         <div class="connection">
+            <a href="https://wa.me/+201067466894" target='blank'><i class='fa-brands fa-whatsapp'></i></a>
+            <a href="https://www.facebook.com/yama00zz" target='blank'><i class='fa-brands fa-facebook'></i></a>
+            <a href="https://www.linkedin.com/in/%D8%B9%D9%85%D8%B1-%D9%85%D8%B7%D8%B1-b4710a32a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B0qmb8ABIRgGWqV%2BAsDNAWg%3D%3D"
+               target='blank'><i class='fa-brands fa-linkedin'></i></a>
+            <a href="https://github.com/omar-p-code" target='blank'><i class='fa-brands fa-github'></i></a>
+         </div>
+      </div>
+   </div>
+</body>
+<script src="fontawesome/js/all.min.js" defer></script>
+<script src="bootstrap.bundle.min.js" defer></script>
+<script src="jquery-3.7.1.min.js" defer></script>
+<script src="main.js" defer></script>
+
+</html>

@@ -1,0 +1,59 @@
+{
+   "gallary": {
+      "count": 17,
+      "type": "png",
+      "name": "gallary-num"
+   },
+   "skills": {
+      "html": {
+         "level": "Advanced",
+         "experience": "+2 Years",
+         "projects": "+18"
+      },
+      "css": {
+         "level": "Advanced",
+         "experience": "+2 Years",
+         "projects": "+18"
+      },
+      "javascript_jquery": {
+         "level": "Advanced",
+         "experience": "+2 Years",
+         "projects": "+15"
+      },
+      "typescript": {
+         "level": "Medium",
+         "experience": "+1 Months",
+         "projects": "+1"
+      },
+      "node_express": {
+         "level": "Beginner",
+         "experience": "+2 Months",
+         "projects": "+3"
+      },
+      "python_flask": {
+         "level": "Medium",
+         "experience": "+6 Months",
+         "projects": "+10"
+      },
+      "mysql": {
+         "level": "Medium",
+         "experience": "+2 Months",
+         "projects": "+6"
+      },
+      "bootstrap": {
+         "level": "Medium",
+         "experience": "+1 Years",
+         "projects": "+9"
+      },
+      "github_git": {
+         "level": "Medium",
+         "experience": "+2 Years",
+         "projects": "+25"
+      },
+      "server_apis": {
+         "level": "Medium",
+         "experience": "+4 Months",
+         "projects": "+10"
+      }
+   }
+}
