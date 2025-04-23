@@ -47,9 +47,14 @@ const img = document.createElement('img');
 img.loading = 'lazy'
 const exit = document.createElement('div');
 const exit_icon = document.createElement('i');
+const visit = document.createElement('div');
+const visit_icon = document.createElement('i');
    exit_icon.classList.add('fa-solid', 'fa-xmark');
+   visit_icon.classList.add('fa-solid', 'fa-arrow-up-right-from-square');
    exit.classList.add('exit');
+   visit.className = 'visit';
    exit.appendChild(exit_icon);
+   visit.appendChild(visit_icon);
 
 
 overlay.classList.add('overlay', 'd-none');
@@ -59,15 +64,26 @@ document.body.appendChild(overlay);
 exit.addEventListener('click', function () {
       overlay.classList.add('d-none');
 });
+
+visit.addEventListener('click', function () {
+      window.open(img.dataset.link, '_blank');
+      overlay.classList.add('d-none');
+});
 img.classList.add('overlay_img');
 overlay.appendChild(exit);
+overlay.appendChild(visit);
 overlay.appendChild(img);
 overlay.classList.add('d-none');
 
 // Event
 gallary_imgs.on('click', function (e) {
-   img.src = e.target.src;
-   overlay.classList.remove('d-none');
+   if (e.target.classList.contains('img')) {
+      img.src = e.target.src;
+      if(e.target.dataset.link) {
+         img.dataset.link = e.target.dataset.link
+      }
+      overlay.classList.remove('d-none');
+   }
 });
 
 
@@ -96,12 +112,23 @@ function add_data() {;
    .then(data => {
       for (let i = 1; i <= data.gallary.count; i++) {
          const img = document.createElement('img');
+         const img_cont = document.createElement('div');
          img.classList.add('img');
+         img_cont.className = 'img_cont';
          // console.log(data);
+         for (let j = 0; j < data.gallary.link.length; j++) {
+            console.log(data.gallary.link)
+            console.log(data.gallary.link[j])
+         if (data.gallary.link[j][0] && data.gallary.link[j][1].includes(i)) {
+            img.setAttribute('data-link', data.gallary.link[j][0]);
+            console.log(img)
+         }
+      }
          const img_src = `./imgs/${data.gallary.name}.${data.gallary.type}`.replace('num', i);
          // console.log(img_src);
          img.src = `${img_src}`;
-         gallary_imgs.append(img);
+         img_cont.appendChild(img);
+         gallary_imgs.append(img_cont);
       }
       skill_details.each(function() {
       for (let skill in data.skills) {
