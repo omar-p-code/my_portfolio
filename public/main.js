@@ -97,9 +97,9 @@ function add_data() {;
       for (let i = 1; i <= data.gallary.count; i++) {
          const img = document.createElement('img');
          img.classList.add('img');
-         console.log(data)
+         // console.log(data);
          const img_src = `./imgs/${data.gallary.name}.${data.gallary.type}`.replace('num', i);
-         console.log(img_src)
+         // console.log(img_src);
          img.src = `${img_src}`;
          gallary_imgs.append(img);
       }
