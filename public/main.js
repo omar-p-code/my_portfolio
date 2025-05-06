@@ -109,43 +109,50 @@ function scroll_section(section) {
 function add_data() {;
    const config = fetch('config.json');
    config.then(res => res.json())
-   .then(data => {
-      for (let i = 1; i <= data.gallary.count; i++) {
-         const img = document.createElement('img');
-         const img_cont = document.createElement('div');
-         img.classList.add('img');
-         img.loading = 'lazy';
-         img_cont.className = 'img_cont';
-         // console.log(data);
-         for (let j = 0; j < data.gallary.link.length; j++) {
-            // console.log(data.gallary.link)
-            // console.log(data.gallary.link[j])
-         if (data.gallary.link[j][0] && data.gallary.link[j][1].includes(i)) {
-            img.setAttribute('data-link', data.gallary.link[j][0]);
-            // console.log(img)
+   .then(handleData);
+}
+
+
+function handleData(data) {
+   addImgs(data);
+   skill_details.each(function() {
+   for (let skill in data.skills) {
+      const details = data.skills[skill];
+      // console.log(details, this.dataset.skill, skill)
+         if (details&& skill == $(this).data('skill')) {
+            $(this).append(`
+               <ul>
+               <li>Level: ${details.level}</li>
+               <li>Experience: ${details.experience}</li>
+               <li>Projects: ${details.projects}</li>
+               </ul>
+               `
+            );
          }
       }
-         const img_src = `./imgs/${data.gallary.name}.${data.gallary.type}`.replace('num', i);
-         // console.log(img_src);
-         img.src = `${img_src}`;
-         img_cont.appendChild(img);
-         gallary_imgs.append(img_cont);
-      }
-      skill_details.each(function() {
-      for (let skill in data.skills) {
-         const details = data.skills[skill];
-         // console.log(details, this.dataset.skill, skill)
-            if (details&& skill == $(this).data('skill')) {
-               $(this).append(`
-                  <ul>
-                  <li>Level: ${details.level}</li>
-                  <li>Experience: ${details.experience}</li>
-                  <li>Projects: ${details.projects}</li>
-                  </ul>
-                  `
-               );
-            }
-         }
-      });
    });
+}
+
+function addImgs(data) {
+   for (let i = 1; i <= data.gallary.count; i++) {
+      const img = document.createElement('img');
+      const img_cont = document.createElement('div');
+      img.classList.add('img');
+      img.loading = 'lazy';
+      img_cont.className = 'img_cont';
+      // console.log(data);
+      for (let j = 0; j < data.gallary.link.length; j++) {
+         // console.log(data.gallary.link)
+         // console.log(data.gallary.link[j])
+      if (data.gallary.link[j][0] && data.gallary.link[j][1].includes(i)) {
+         img.setAttribute('data-link', data.gallary.link[j][0]);
+         // console.log(img)
+      }
+   }
+      const img_src = `./imgs/${data.gallary.name}.${data.gallary.type}`.replace('num', i);
+      // console.log(img_src);
+      img.src = `${img_src}`;
+      img_cont.appendChild(img);
+      gallary_imgs.append(img_cont);
+}
 }
