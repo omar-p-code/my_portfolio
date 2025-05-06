@@ -114,6 +114,7 @@ function add_data() {;
          const img = document.createElement('img');
          const img_cont = document.createElement('div');
          img.classList.add('img');
+         img.loading = 'lazy';
          img_cont.className = 'img_cont';
          // console.log(data);
          for (let j = 0; j < data.gallary.link.length; j++) {
