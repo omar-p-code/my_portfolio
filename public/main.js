@@ -11,11 +11,11 @@ add_data();
 
 window.addEventListener('scroll', function () {
    const current_scroll = this.scrollY;
-   console.log(current_scroll)
+   // console.log(current_scroll)
    sections.each(function () {
       const section_top = $(this).offset().top - 100;
       const section_bottom = $(this).outerHeight() + section_top;
-      console.log(section_top)
+      // console.log(section_top)
       if (current_scroll >= section_top && current_scroll <= section_bottom) {
          const id = $(this).attr('class');
          nav.removeClass('active');
@@ -117,11 +117,11 @@ function add_data() {;
          img_cont.className = 'img_cont';
          // console.log(data);
          for (let j = 0; j < data.gallary.link.length; j++) {
-            console.log(data.gallary.link)
-            console.log(data.gallary.link[j])
+            // console.log(data.gallary.link)
+            // console.log(data.gallary.link[j])
          if (data.gallary.link[j][0] && data.gallary.link[j][1].includes(i)) {
             img.setAttribute('data-link', data.gallary.link[j][0]);
-            console.log(img)
+            // console.log(img)
          }
       }
          const img_src = `./imgs/${data.gallary.name}.${data.gallary.type}`.replace('num', i);
@@ -133,6 +133,7 @@ function add_data() {;
       skill_details.each(function() {
       for (let skill in data.skills) {
          const details = data.skills[skill];
+         // console.log(details, this.dataset.skill, skill)
             if (details&& skill == $(this).data('skill')) {
                $(this).append(`
                   <ul>

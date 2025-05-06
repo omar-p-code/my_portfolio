@@ -74,11 +74,11 @@ $primary: #007bff;
    grid-template-columns: repeat(3, minmax(auto, 1fr));
    gap: 2rem;
 
-   @media (max-width: 768px) {
+   @include media-s {
       grid-template-columns: repeat(2, minmax(auto, 1fr));
    }
 
-   @media (max-width: 480px) {
+   @include media-xs {
       grid-template-columns: repeat(1, minmax(auto, 1fr));
    }
 }
@@ -458,6 +458,12 @@ img {
          }
 
          @include media-s {
+            min-width: 150px;
+            width: 40vw;
+            height: fit-content;
+         }
+         
+         @include media-xs {
             min-width: 150px;
             width: 80vw;
             height: fit-content;

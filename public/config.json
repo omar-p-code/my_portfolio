@@ -1,6 +1,6 @@
 {
    "gallary": {
-      "count": 50,
+      "count": 67,
       "type": "png",
       "name": "gallary-num",
       "link": [
@@ -87,6 +87,33 @@
                25,
                26
             ]
+         ],
+         [
+            "https://omar-p-code.github.io/rest-countries-api/",
+            [
+               51,
+               52,
+               53,
+               54,
+               55,
+               56,
+               57
+            ]
+         ],
+         [
+            "https://omar-p-code.github.io/space-tourism-website/index.html",
+            [
+               58,
+               59,
+               60,
+               61,
+               62,
+               63,
+               64,
+               65,
+               66,
+               67
+            ]
          ]
       ]
    },
@@ -140,6 +167,11 @@
          "level": "Medium",
          "experience": "+4 Months",
          "projects": "+10"
+      },
+      "pugJS": {
+         "level": "Advanced",
+         "experience": "+1 Months",
+         "projects": "+2"
       }
    }
 }
