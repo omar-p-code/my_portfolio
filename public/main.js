@@ -123,7 +123,7 @@ function handleData(data) {
             $(this).append(`
                <ul>
                <li>Level: ${details.level}</li>
-               <li>Experience: ${details.experience}</li>
+               <li>Experience: +${getExp(details.experience, ':')}</li>
                <li>Projects: ${details.projects}</li>
                </ul>
                `
@@ -131,6 +131,39 @@ function handleData(data) {
          }
       }
    });
+}
+
+/**
+  * @param {string} data - month:day:year
+  * @param {string} sep - separator of the data like (:) at the last example
+ * @return months or years of experience from the givin date to the current date
+ */
+function getExp(date, sep) {
+   const date_arr = date.split(sep);
+   const date_obj = new Date(date_arr[2], date_arr[0] - 1, date_arr[1]);
+   const current_date = new Date();
+   const years = current_date.getFullYear() - date_obj.getFullYear();
+   const months = current_date.getMonth() - date_obj.getMonth();
+   const days = current_date.getDate() - date_obj.getDate();
+   if (years == 0) {
+      if (months > 0) {
+         if (date_obj.getMonth() > 5) {
+            return `.5 year`;
+         }
+         if (months == 1) {
+            return `${months} month`;
+         }
+         return `${months} months`;
+      }else {
+         return `${days} day`
+      }
+      }else {
+         if (years == 1) {
+            return `${years} year`;
+      }else {
+         return `${years} years`;
+      }
+   }
 }
 
 function addImgs(data) {

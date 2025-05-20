@@ -120,57 +120,57 @@
    "skills": {
       "html": {
          "level": "Advanced",
-         "experience": "+2 Years",
+         "experience": "1:2:2023",
          "projects": "+18"
       },
       "css": {
          "level": "Advanced",
-         "experience": "+2 Years",
+         "experience": "1:23:2023",
          "projects": "+18"
       },
       "javascript_jquery": {
          "level": "Advanced",
-         "experience": "+2 Years",
+         "experience": "3:30:2023",
          "projects": "+15"
       },
       "typescript": {
          "level": "Medium",
-         "experience": "+1 Months",
+         "experience": "4:1:2025",
          "projects": "+1"
       },
       "node_express": {
          "level": "Beginner",
-         "experience": "+2 Months",
+         "experience": "2:20:2025",
          "projects": "+3"
       },
       "python_flask": {
          "level": "Medium",
-         "experience": "+6 Months",
+         "experience": "11:23:2024",
          "projects": "+10"
       },
       "mysql": {
          "level": "Medium",
-         "experience": "+2 Months",
+         "experience": "2:23:2025",
          "projects": "+6"
       },
       "bootstrap": {
          "level": "Medium",
-         "experience": "+1 Years",
+         "experience": "1:2:2023",
          "projects": "+9"
       },
       "github_git": {
          "level": "Medium",
-         "experience": "+2 Years",
+         "experience": "1:23:2023",
          "projects": "+25"
       },
       "server_apis": {
          "level": "Medium",
-         "experience": "+4 Months",
+         "experience": "12:23:2024",
          "projects": "+10"
       },
       "pugJS": {
          "level": "Advanced",
-         "experience": "+1 Months",
+         "experience": "3:23:2025",
          "projects": "+2"
       }
    }
