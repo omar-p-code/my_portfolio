@@ -5,6 +5,11 @@ const gallary_img = $('.gallary_section .imgs img');
 const head_bar = $('.header .bar');
 const skill_details = $('.about_section .skills .details');
 const sections = $('.home_section, .about_section, .gallary_section, .contact_section');
+const form = $('.contact_section form');
+
+console.log(form)
+
+form.on('submit', submitDataForm)
 
 add_data();
 
@@ -188,4 +193,58 @@ function addImgs(data) {
       img_cont.appendChild(img);
       gallary_imgs.append(img_cont);
 }
+}
+
+
+async function submitDataForm(e) {
+   const form = e.currentTarget
+   const messageBox = $(form).find('.message-box');
+   const phone = $(form).find('input.phone');
+   e.preventDefault();
+   messageBox.text('').removeClass('success err fail');
+   if (checkPhone(phone, messageBox) == 'false') return;
+   phone.removeClass('wrong');
+   const formData = new FormData(form);
+   try {
+      tryForm(form, formData, messageBox)
+   }catch(e) {
+      console.log(e)
+      messageBox.text('Error Occurred During Sending').addClass('fail');
+   }finally {
+      emptyMessage(messageBox)
+   }
+}
+
+function emptyMessage(messageBox) {
+   setTimeout(() => {
+      messageBox.empty();
+   },3000)
+}
+
+
+function tryForm(form, formData, messageBox) {
+      fetch(form.action, {
+         method: 'POST',
+         body: formData
+      })
+      .then(data => data.json())
+      .then(data => {
+         if (data.success) {
+            messageBox.text('Data Sent Successfuly').addClass('success');
+            form.reset();
+         }else {
+            messageBox.text('Error Occurred During Sending Or Wrong Inserted Data').addClass('err');
+         }
+      })
+}
+
+function checkPhone(phone, messageBox) {
+   const phone_regex = /0\d{10}/;
+   if (phone_regex.test(phone.val())) {
+      phone.removeClass('wrong');
+   }else {
+      messageBox.text('Error Occurred During Sending Or Wrong Inserted Data').addClass('err');
+      phone.addClass('wrong');
+      return 'false';
+   }
 }

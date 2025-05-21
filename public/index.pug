@@ -210,24 +210,32 @@ html(lang="en")
             p Here are some of my projects that I have worked on.
          div.imgs
       div.contact_section
-         //div.connections
          div.intro
             h2 Contact Me
             p If you have any questions or want to get in touch, feel free to contact me.
-         div.content
-            div.info
-               div.icon
-                  img(src="imgs/favicon.png" alt="Yama Logo")
-               div name: omar
-               div address: Egypt, Alex
-               div Phone: 01202919251
-
-            div.connection
-               a(href="https://wa.me/+201067466894" target='blank') #[i(class='fa-brands fa-whatsapp')]
-               a(href="https://www.facebook.com/yama00zz" target='blank') #[i(class='fa-brands fa-facebook')]
-               a(href="https://www.linkedin.com/in/%D8%B9%D9%85%D8%B1-%D9%85%D8%B7%D8%B1-b4710a32a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B0qmb8ABIRgGWqV%2BAsDNAWg%3D%3D"
-                  target='blank') #[i(class='fa-brands fa-linkedin')]
-               a(href="https://github.com/omar-p-code" target='blank') #[i(class='fa-brands fa-github')]
+         div.connections
+            div.content
+               div.connection
+                  div.info
+                     div.icon
+                        img(src="imgs/favicon.png" alt="Yama Logo")
+                     div name: omar
+                     div address: Egypt, Alex
+                     div Phone: 01202919251
+                  form(action='https://api.web3forms.com/submit', method='POST')
+                     .message-box
+                     input(type='hidden', name='access_key', value='3086d506-6564-4f6c-adad-b4f1405fdec5')
+                     input.name(name='name', type='text', placeholder='Enter Your Name', required)
+                     input.email(name='email', type='email', placeholder='Enter Your Email Address', required)
+                     input.phone(name='phone', type='phone', placeholder='Enter Your Phone Number', required)
+                     textarea.message(name='message', placeholder='Message You Can Leave It Empty') This Is My Info Pleace Get Touch With Me
+                     button.send Send
+                  .links
+                     a(href="https://wa.me/+201067466894" target='blank') #[i(class='fa-brands fa-whatsapp')]
+                     a(href="https://www.facebook.com/yama00zz" target='blank') #[i(class='fa-brands fa-facebook')]
+                     a(href="https://www.linkedin.com/in/%D8%B9%D9%85%D8%B1-%D9%85%D8%B7%D8%B1-b4710a32a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B0qmb8ABIRgGWqV%2BAsDNAWg%3D%3D"
+                     target='blank') #[i(class='fa-brands fa-linkedin')]
+                     a(href="https://github.com/omar-p-code" target='blank') #[i(class='fa-brands fa-github')]
       script(src="fontawesome/js/all.min.js" defer)
       script(src="bootstrap.bundle.min.js" defer)
       script(src="jquery-3.7.1.min.js" defer)

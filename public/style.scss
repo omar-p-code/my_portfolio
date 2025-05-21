@@ -601,56 +601,133 @@ img {
       display: flex;
       flex-direction: column;
       gap: 50px;
-
-      .info {
-         @extend %flex-center;
-         flex-direction: column;
-         gap: 10px;
-         justify-self: center;
-         width: fit-content;
-         align-self: center;
-         padding: 20px;
-         text-transform: capitalize;
-         font-size: 1.2rem;
-         font-weight: bold;
-
-         .icon {
-            @extend %icon;
-            width: 100px;
-            height: 100px;
-            background-color: $dark;
-            color: #fff;
-            font-size: 2rem;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-
-            &:hover {
-               transform: translateY(-4%);
-               filter: drop-shadow(0 3px 6px black);
-               background-color: $primary;
-            }
-         }
-      }
    }
 
    .connection {
       display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 80vw;
+      margin-top: 5vh;
 
-      a {
-         @extend %icon;
-         text-decoration: none;
-         color: $light;
-         font-size: 1.5rem;
-         width: 20vw;
-         height: 20vw;
-         max-width: 100px;
-         max-height: 100px;
-         min-width: 50px;
-         min-height: 50px;
+      .info {
+            @extend %flex-center;
+            flex-direction: column;
+            gap: 10px;
+            justify-self: center;
+            width: fit-content;
+            align-self: center;
+            padding: 20px;
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            font-weight: bold;
+            flex: 1;
+      
+            .icon {
+               @extend %icon;
+               width: 100px;
+               height: 100px;
+               background-color: $dark;
+               color: #fff;
+               font-size: 2rem;
+               cursor: pointer;
+               transition: all 0.3s ease-in-out;
+      
+               &:hover {
+                  transform: translateY(-4%);
+                  filter: drop-shadow(0 3px 6px black);
+                  background-color: $primary;
+               }
+            }
+         }
+      
+      >* {
+         flex: 1;
       }
+
+      form {
+         @extend %flex-center;
+         flex-direction: column;
+         gap: 10px;
+
+         .message-box {
+            font-weight: bold;
+            &.success {
+               color: green;
+            }
+            &.err {
+               color: darken(yellow, 10%);
+            }
+            &.fail {
+               color: red;
+            }
+         }
+
+         >*:not(.message-box) {
+            width: 80%;
+            outline: none;
+            border: none;
+            background: transparent;
+            backdrop-filter: brightness(.92);
+            transition: .3s;
+            padding: 10px;
+            min-width: 250px;
+
+            &.wrong {
+               box-shadow: 0 0 3px red;
+               border-color: transparent;
+            }
+
+            &:focus,
+            &:hover {
+                  box-shadow: 0 0 3px $primary;
+                  border-color: transparent;
+               }
+         }
+
+         input {
+            border-radius: 6px;
+            font-size: 1.2rem;
+            color: $dark;
+
+            border-bottom: 1px solid $dark;
+         }
+
+         textarea {
+            resize: none;
+            font-size: 1.2rem;
+         }
+
+         .send {
+            border-radius: 6px;
+            font-size: 1.2rem;
+         }
+      }
+
+      .links {
+         display: grid;
+         justify-content: space-evenly;
+         grid-template-columns:repeat(auto-fit ,minmax(50px, 1fr));
+         height: fit-content;
+         align-items: center;
+         gap: 10px;
+         padding: 20px;
+         flex: .5;
+
+         a {
+            @extend %icon;
+            text-decoration: none;
+            color: $light;
+            font-size: 1.5rem;
+            width: 5vw;
+            height: 5vw;
+            max-width: 100px;
+            max-height: 100px;
+            min-width: 50px;
+            min-height: 50px;
+         }
+      }
+
    }
 }
 
