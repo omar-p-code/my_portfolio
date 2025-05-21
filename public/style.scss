@@ -5,7 +5,7 @@ $primary: #007bff;
 
 
 @mixin media-l {
-   @media (min-width: 1024) {
+   @media (min-width: 1024px) {
       @content;
    }
 }
@@ -580,6 +580,7 @@ img {
    height: 100vh;
    @extend %flex-center;
    flex-direction: column;
+   margin-block: 10vh;
 
    .intro {
       @extend %flex-center;
@@ -607,7 +608,7 @@ img {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      width: 80vw;
+      width: 90vw;
       margin-top: 5vh;
 
       .info {
@@ -706,23 +707,37 @@ img {
 
       .links {
          display: grid;
-         justify-content: space-evenly;
-         grid-template-columns:repeat(auto-fit ,minmax(50px, 1fr));
-         height: fit-content;
+         justify-content: center;
+         justify-items: center;
          align-items: center;
          gap: 10px;
          padding: 20px;
-         flex: .5;
+         flex: 1;
+
+         @include media-l {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+         }
+
+         @include media-m {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+         }
+
+         @include media-s {
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+         }
+         
+         @include media-xs {
+            display: flex;
+            flex-wrap: wrap;
+         }
 
          a {
             @extend %icon;
             text-decoration: none;
-            color: $light;
             font-size: 1.5rem;
-            width: 5vw;
-            height: 5vw;
-            max-width: 100px;
-            max-height: 100px;
+            color: $light;
+            width: 8vw;
+            height: 8vw;
             min-width: 50px;
             min-height: 50px;
          }
