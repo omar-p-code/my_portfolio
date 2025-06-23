@@ -3,6 +3,10 @@ $dark: #343a40;
 $light: #f8f9fa;
 $primary: #007bff;
 
+svg {
+   filter: drop-shadow(0 0 0 transparent);
+   transition: filter .3s;
+}
 
 @mixin media-l {
    @media (min-width: 1024px) {
@@ -26,6 +30,12 @@ $primary: #007bff;
    @media (max-width: 480px) {
       @content
    }
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+   font-size: inherit;
 }
 
 %active_hover {
@@ -59,10 +69,12 @@ $primary: #007bff;
 
    &:hover {
       transform: translateY(-4%);
-      filter: drop-shadow(0 3px 6px black);
       background-color: $primary;
       color: $dark;
-
+      filter: drop-shadow(0px 0px 6px $primary);
+      svg {
+         filter: drop-shadow(-2px 2px 0px $light);
+      }
    }
 }
 
@@ -222,7 +234,6 @@ img {
          color: $light;
          cursor: pointer;
          @extend %active_hover;
-
       }
    }
 
@@ -707,24 +718,26 @@ img {
 
       .links {
          display: grid;
-         justify-content: center;
+         justify-content: start;
          justify-items: center;
-         align-items: center;
+         align-items: start;
          gap: 10px;
          padding: 20px;
          flex: 1;
+         grid-template-columns: minmax(50px, 150px);
+         max-height: 80%;
 
-         @include media-l {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-         }
+         // @include media-l {
+         //    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+         // }
 
-         @include media-m {
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-         }
+         // @include media-m {
+         //    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+         // }
 
-         @include media-s {
-            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-         }
+         // @include media-s {
+         //    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+         // }
          
          @include media-xs {
             display: flex;
@@ -736,8 +749,8 @@ img {
             text-decoration: none;
             font-size: 1.5rem;
             color: $light;
-            width: 8vw;
-            height: 8vw;
+            width: 5vw;
+            height: 5vw;
             min-width: 50px;
             min-height: 50px;
          }

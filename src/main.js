@@ -12,11 +12,10 @@ console.log(form)
 form.on('submit', submitDataForm)
 
 add_data();
-
-
 window.addEventListener('scroll', function () {
-   const current_scroll = this.scrollY;
-   // console.log(current_scroll)
+   if (!location.href.includes('gallary.html')) {
+      const current_scroll = this.scrollY;
+      // console.log(current_scroll)
    sections.each(function () {
       const section_top = $(this).offset().top - 100;
       const section_bottom = $(this).outerHeight() + section_top;
@@ -27,6 +26,7 @@ window.addEventListener('scroll', function () {
          $(`.header .nav li[data-section=${id}]`).addClass('active');
       }
    });
+}
 });
 
 // Mobile Bars
@@ -94,10 +94,17 @@ gallary_imgs.on('click', function (e) {
 
 nav.on('click', function (e) {
    e.stopPropagation();
-   nav.removeClass('active');
-   $(this).addClass('active');
-   const section = `.${$(this).data('section')}`;
-   scroll_section(section);
+   if ($(this).data('section').includes('.html') || $(this).data('section').includes('.htm')) {
+      if(location.href.includes('index.html')) {location.href = `./gallary.html`};
+      nav.removeClass('active');
+      $(this).addClass('active');
+   }else {
+      if (location.href.includes('gallary.html')) {location.href = `./index.html#${$(this).data('section').split('_')[0]}`};
+      nav.removeClass('active');
+      $(this).addClass('active');
+      const section = `.${$(this).data('section')}`;
+      scroll_section(section);
+   }
 });
 
 
@@ -119,10 +126,14 @@ function add_data() {;
 
 
 function handleData(data) {
-   addImgs(data);
-   skill_details.each(function() {
-   for (let skill in data.skills) {
-      const details = data.skills[skill];
+   if (location.href.includes('gallary.html')) {
+      addImgs(data);
+      nav.removeClass('active');
+      nav_list.find('.gallary').addClass('active');
+   }else {
+      skill_details.each(function() {
+         for (let skill in data.skills) {
+            const details = data.skills[skill];
       // console.log(details, this.dataset.skill, skill)
          if (details&& skill == $(this).data('skill')) {
             $(this).append(`
@@ -136,6 +147,7 @@ function handleData(data) {
          }
       }
    });
+}
 }
 
 /**

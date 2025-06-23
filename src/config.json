@@ -1,6 +1,6 @@
 {
    "gallary": {
-      "count": 67,
+      "count": 76,
       "type": "png",
       "name": "gallary-num",
       "link": [
@@ -114,6 +114,28 @@
                66,
                67
             ]
+         ],[
+            "https://omar-p-code.github.io/photo-editor/html/Editor.html",
+            [
+               68,
+               69
+            ]
+         ],
+         [
+            "https://omar-p-code.github.io/rock-paper-scissors-game/",
+            [
+               70,
+               71
+            ]
+         ],[
+            "https://omar-p-code.github.io/multi-step-form/",
+            [
+               72,
+               73,
+               74,
+               75,
+               76
+            ]
          ]
       ]
    },
@@ -172,6 +194,16 @@
          "level": "Advanced",
          "experience": "3:23:2025",
          "projects": "+2"
+      },
+      "UI/UX": {
+         "level": "Medium",
+         "experience": "4:23:2025",
+         "projects": "+1"
+      },
+      "React": {
+         "level": "Beginner",
+         "experience": "5:3:2025",
+         "projects": "+5"
       }
    }
 }
